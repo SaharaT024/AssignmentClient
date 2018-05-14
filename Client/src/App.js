@@ -7,7 +7,6 @@ class App extends Component {
         super(props);
         this.state = {
             c: '', // course
-            // faculty
         }
     }
 
@@ -47,16 +46,20 @@ class App extends Component {
             );
         else
             return (
+                <body style={{ background: '#D0D3D4'}}>
                 <div>
-                    <div style = {{ background:'#48C9B0'}}>
-                        <th style = {{fontSize:40}}>College of Computing (CoC)</th>
+                    <center>
+                    <div style = {{ background:'#48C9B0' , fontFamily:'Console',margin:'40px'}}>
+                        <br/><br/><th style = {{fontSize:40}}>College of Computing (CoC)</th><br/><br/>
                     </div>
-                    <div style = {{ background:'#F7DC6F'}}>
+                    </center>
+                    <div style = {{ background:'#F7DC6F' , fontFamily:'Console' , margin: '40px'}}>
+                    <center>
                     <table>
                         <tr>
                             <th style = {{width: '100px',fontSize: 20}}>No</th>
-                            <th style = {{width: '200px',fontSize: 20}}>Course</th>
-                            <th style = {{width: '200px',fontSize: 20}}>Optional</th>
+                            <th style = {{width: '200px',fontSize: 20}}>Curriculums</th>
+                            <th style = {{width: '200px',fontSize: 20}}>Delete</th>
                         </tr>
                         <tbody >
                         {  curriculumsList.map((data, index) => {
@@ -65,26 +68,30 @@ class App extends Component {
                                     <td>{data.c}</td>
 
                                     <td><button id={data.id}
-                                                onClick={handleDelete}>DELETE</button></td>
+                                         onClick={handleDelete} style = {{fontSize: 15 , fontFamily:'Console', background: '#F1948A' }}>DELETE</button></td>
                                 </tr>
                             })
                         }
                         </tbody>
                     </table>
+                    </center>
                     </div>
-                    <div style = {{ background:'#85C1E9'}}>
-                    <from >
+                    <div style = {{ background:'#85C1E9' , fontFamily:'Console' , margin:'40px'}}>
+                    <center>
+                    <from ><br/>
                         <th style={{fontSize:20}}>
                             Add Curriculum
                         </th>
                         <br></br>
-                        <input type="text" name="c" placeholder="Enter Course Here"
-                               onChange={handleChange}style ={{ fontSize: 15}}/>
+                        <input type="text" name="c" placeholder="Enter Curriculum Here"
+                               onChange={handleChange}style ={{ fontSize: 15 , fontFamily:'Console'}}/>
 
-                        <button onClick={handleSubmit} style={{fontSize: 15}}>SUBMIT</button>
-                    </from>
-                        </div>
+                        <button onClick={handleSubmit} style={{fontSize: 15 , fontFamily:'Console',background: '#F1948A'}}>SUBMIT</button>
+                    </from><br/><br/>
+                    </center>
+                    </div>
                 </div>
+                </body>
             )
     }
 }
